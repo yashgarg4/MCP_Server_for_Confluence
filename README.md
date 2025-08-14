@@ -39,20 +39,20 @@ The application consists of two main components that work together:
 
 The FastAPI server exposes the following endpoints. You can also explore them interactively via the auto-generated documentation at http://127.0.0.1:8000/docs when the server is running.
 
-- +### Agent Invocation
-- +- `POST /invoke`
-- - **Description**: The primary endpoint to interact with the CrewAI agent. It accepts a natural language prompt and returns the agent's final response.
-- - **Request Body**: `{"prompt": "your request here"}`
-- - **Response Body**: `{"response": "agent's text response"}`
-- +### MCP Context API
+### Agent Invocation
+- `POST /invoke`
+  - **Description**: The primary endpoint to interact with the CrewAI agent. It accepts a natural language prompt and returns the agent's final response.
+  - **Request Body**: `{"prompt": "your request here"}`
+  - **Response Body**: `{"response": "agent's text response"}`
+### MCP Context API
   These endpoints provide raw, structured data directly from Confluence, formatted for easy consumption by other applications or agents.
-- +-  `GET /context/spaces`
-- - **Description**: Retrieves a list of all accessible Confluence spaces.
-- - **Example**: curl http://127.0.0.1:8000/context/spaces
+- `GET /context/spaces`
+  - **Description**: Retrieves a list of all accessible Confluence spaces.
+  - **Example**: curl http://127.0.0.1:8000/context/spaces
 
-- +-  `GET /context/pages/{space_key}`
-- - **Description**: Retrieves a list of all pages for a specific Confluence space.
-- - **Example**: curl http://127.0.0.1:8000/context/pages/NB
+- `GET /context/pages/{space_key}`
+  - **Description**: Retrieves a list of all pages for a specific Confluence space.
+  - **Example**: curl http://127.0.0.1:8000/context/pages/NB
 
 ## 🛠️ Setup and Installation
 
@@ -155,3 +155,4 @@ Once the application is running, navigate to the Streamlit URL and type your req
 - `Get the details of Confluence page with ID '12345'.`
 - `Search for pages in the 'NB' space that mention 'project timelines'.`
 - `Add a comment to Confluence page '12345': 'This document is ready for review.'`
+
